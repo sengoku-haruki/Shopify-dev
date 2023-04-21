@@ -33,6 +33,26 @@
      </div>
    </div>
  </div>
+ <script type="text/javascript">  
+  const swiper = new Swiper('.swiper-container', {
+    // 自動再生（true:自動再生する、false:自動再生しない）
+     autoplay: {
+         delay: 9000,
+     },
+    // スライド方向（水平方向）
+    direction: 'horizontal',
+    // エフェクト（true:フェードアニメーション、false:スライドアニメーション）
+    effect: 'fade',
+    // ループ
+    loop: true,
+    // 表示枚数
+    slidesPerView: 1,
+    // ページネーション（true:表示、false:非表示）
+    pagination: false,
+    // ページ送りボタン（true:表示、false:非表示）
+    navigation: false
+  });
+ </script>
 {% schema %}
     {
         "name": "スライダーsample",
