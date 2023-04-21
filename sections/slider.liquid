@@ -134,7 +134,9 @@
             ">
                 <h1 class="{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ block.settings.slide_title }}</h1>
                 <p class="{% if section.settings.text_size == 'large' %} mega-desc--large{% endif %}">{{ block.settings.subheading }}</p>
-           <a href="#" class="btn slideshow__btn">ボタンのラベル</a>
+                 {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+                    <a href="{{ block.settings.button_link }}" class="slideshow__btn">{{ block.settings.button_label | escape }}</a>
+                 {%- endif -%}
             </div>
      </div>
      <div class="swiper-slide">
