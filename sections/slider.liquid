@@ -1,12 +1,138 @@
+<h1>スライダー</h1>
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+    {
+        "name": "スライダーsample",
+        "class": "slide-wrap",
+        "settings": [
+            {
+                "type": "select",
+                "id": "slide_height",
+                "label": "スライドの高さ",
+                "default": "adapt",
+                "options": [
+                    {
+                        "label": "最初の画像の高さに対応",
+                        "value": "adapt"
+                    },
+                    {
+                        "label": "小",
+                        "value": "small"
+                    },
+                    {
+                        "label": "中",
+                        "value": "medium"
+                    },
+                    {
+                        "label": "大",
+                        "value": "large"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "text_size",
+                "label": "文字サイズ",
+                "options": [
+                    {
+                        "label": "中",
+                        "value": "medium"
+                    },
+                    {
+                        "label": "大",
+                        "value": "large"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "text_alignment",
+                "label": "テキストアラインメント",
+                "default": "center center",
+                "options": [
+                    {
+                        "label": "中心",
+                        "value": "center center"
+                    },
+                    {
+                        "label": "左中央",
+                        "value": "left center"
+                    },
+                    {
+                        "label": "右中央",
+                        "value": "right center"
+                    }
+                ]
+            },
+            {
+                "type": "checkbox",
+                "id": "show_overlay",
+                "label": "オーバーレイを表示する",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "auto",
+                "label": "スライドの自動切り替え",
+                "default": false
+            },
+            {
+                "type": "range",
+                "id": "speed",
+                "label": "スライドの変更する間隔",
+                "max": 9,
+                "min": 3,
+                "step": 2,
+                "unit": "秒",
+                "default": 5
+            }
+        ],
+        "blocks": [
+            {
+                "type": "slide",
+                "name": "画像スライド",
+                "limit": 3,
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "画像"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slide_title",
+                        "default": "見出しが入ります。",
+                        "label": "見出し"
+                    },
+                    {
+                        "type": "text",
+                        "id": "subheading",
+                        "default": "あなたのブランドのストーリーをビデオや画像で伝える",
+                        "label": "小見出し"
+                    },
+                    {
+                        "type": "text",
+                        "id": "button_label",
+                        "default": "Button label",
+                        "label": "ボタンのラベルが入ります",
+                        "info": "ボタンのラベルのインフォメーション"
+                    },
+                    {
+                        "type": "url",
+                        "id": "button_link",
+                        "label": "URL"
+                    }
+                ]
+            }
+        ],
+        "presets":[
+            {
+                "name": "スライダー画像",
+                "category": "画像",
+                "settings": {
+                    "auto": false,
+                    "speed": 5
+                }
+            }
+        ]
+    }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
