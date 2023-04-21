@@ -1,3 +1,121 @@
+<style>
+.swiper-container{
+    max-height: 100vh;
+    transition: height .6s cubic-bezier(.44, .13, .48, .87);
+}
+.swiper-slide{
+    position: relative;
+}
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+.slide-overlay::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(204,204,204,0.8);
+}
+.swiper-slide .slide-content{
+    position: absolute;
+    top: 50%;
+    padding: 20px;
+}
+@media only screen and (max-width: 750px) {
+    .swiper-slide .slide-content{
+        padding: 0px;
+    }
+}
+.swiper-slide .slide-content.center{
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+.swiper-slide .slide-content.left{
+    left: 0%;
+    transform: translateX(0%) translateY(-50%);
+    text-align: left;
+}
+.swiper-slide .slide-content.right{
+    right: 0%;
+    transform: translateX(0%) translateY(-50%);
+    text-align: right;
+}
+.swiper-slide .slide-content h2{
+    color: #FFF !important;
+    margin: 0px;
+}
+.swiper-slide .slide-content p{
+    margin: 0px;
+}
+.slideshow--small {
+  height: 175px; 
+}
+@media only screen and (min-width: 750px) {
+    .slideshow--small{
+      height: 475px; 
+    } 
+}
+.slideshow--medium {
+    height: 270px; 
+}
+@media only screen and (min-width: 750px) {
+    .slideshow--medium{
+      height: 650px; 
+    }
+}
+.slideshow--large{
+    height: 375px; 
+}
+@media only screen and (min-width: 750px) {
+    .slideshow--large {
+      height: 775px; 
+    } 
+}
+.swiper-slide .slide-content h2.mega-title--large{
+    font-size: 45px;
+}
+.swiper-slide .slide-content p.mega-desc--large{
+    font-size: 22px;
+}
+@media only screen and (max-width: 750px) {
+    .swiper-slide .slide-content h2{
+        font-size: 18px;
+    }
+    .swiper-slide .slide-content p{
+        font-size: 12px;
+    }
+    .swiper-slide .slide-content h2.mega-title--large{
+        font-size: 22px;
+    }
+    .swiper-slide .slide-content p.mega-desc--large{
+        font-size: 14px;
+    }
+}
+.slideshow__btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+}
+@media only screen and (max-width: 750px) {
+    .slideshow__btn{
+        display: inline-block;
+        margin-top: 10px;
+        padding: 5px 10px;
+    }
+ }
+ </style>
+
  <div class="swiper-container slideshow--small">
    <div class="swiper-wrapper">
      <div class="swiper-slide">
