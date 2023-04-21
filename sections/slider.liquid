@@ -122,7 +122,11 @@
 		<div class="slide-overlay">
 		</div>
             <img src="https://picsum.photos/500/300">
-            <div class="slide-content center">
+            <div class="slide-content 
+            {% if section.settings.text_alignment == 'center center' %} center {% endif %}
+            {% if section.settings.text_alignment == 'left center' %} left {% endif %}
+            {% if section.settings.text_alignment == 'right center' %} right {% endif %}
+            ">
                 <h2 class="{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">Slide Title 1</h2>
                 <p class="{% if section.settings.text_size == 'large' %} mega-desc--large{% 
                 	  endif %}">Lorem ipsum dolor sit amet, consectetur</p>
@@ -130,8 +134,10 @@
             </div>
      </div>
      <div class="swiper-slide">
-                <div class="slide-overlay">
-                </div>
+        {% if section.settings.show_overlay == true %}
+          <div class="slide-overlay">
+          </div>
+        {% endif %}
            <img src="https://picsum.photos/500/301">
             <div class="slide-content center">
                 <h2 class="mega-title--large">Slide Title 2</h2>
