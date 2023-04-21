@@ -123,9 +123,9 @@
 		</div>
             <img src="https://picsum.photos/500/300">
             <div class="slide-content center">
-                <h2 class="mega-title--large">Slide Title 1</h2>
-                <p class="mega-desc--large">Lorem ipsum dolor sit amet, 
-  consectetur</p>
+                <h2 class="{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">Slide Title 1</h2>
+                <p class="{% if section.settings.text_size == 'large' %} mega-desc--large{% 
+                	  endif %}">Lorem ipsum dolor sit amet, consectetur</p>
            <a href="#" class="btn slideshow__btn">ボタンのラベル</a>
             </div>
      </div>
