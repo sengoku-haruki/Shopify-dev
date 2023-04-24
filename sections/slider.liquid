@@ -227,9 +227,16 @@
     // 表示枚数
     slidesPerView: 1,
     // ページネーション（true:表示、false:非表示）
-    pagination: false,
+   pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        },
     // ページ送りボタン（true:表示、false:非表示）
-    navigation: false
+   navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+   }
   });
  </script>
 {% schema %}
