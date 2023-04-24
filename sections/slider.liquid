@@ -237,7 +237,8 @@
   {%- endif -%}
   {% assign wrapper_height = 100 | divided_by: min_aspect_ratio %}
 {%- endif -%} 
- <div class="swiper-container slideshow--{{ section.settings.slide_height }}">
+ 　<div class="swiper-container slideshow--{{ section.settings.slide_height }}" {% if section.settings.slide_height == 'adapt' %} data-min-aspect-ratio="{{ min_aspect_ratio }}"
+   style="height: {{- wrapper_height -}}vw"{% endif %} id="sliderContainer">
    <div class="swiper-wrapper">
      {%- for block in section.blocks -%}
      <div class="swiper-slide">
