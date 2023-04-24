@@ -155,6 +155,78 @@
 	.swiper-button-next{
 	    right: calc(50% - 155px / 2);
 	}
+   /* 再生ボタン */
+ .stopbtn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    transform: translateX(50%);
+    right: calc(50% - 220px / 2);
+    width: 44px;
+    height: 44px;
+    margin: 0px;
+    background-color: rgba(0,0,0,.4);
+    z-index: 1;
+}
+
+.stopbtn.stop {
+    display: inline-block;
+}
+.stopbtn.stop:before, .stopbtn.stop:after {
+    position: absolute;
+    top: 15px;
+    content: '';
+    width: 3px;
+    height: 15px;
+    background-color: #FFF;
+}
+.stopbtn.stop:before {
+    left: 55%;
+  }
+  .stopbtn.stop:after {
+    left: 35%;
+  }
+
+.stopbtn.start {
+  display: inline-block;
+}
+.stopbtn.start:before {
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 14px;
+    border-color: transparent transparent transparent #FFF;
+  }
+  .stopbtn.start:after {
+    display: none;
+  }
+  @media only screen and (max-width: 750px) {
+    .slider-other-menu{
+        height: 30px;
+    }
+    .swiper-pagination{
+        top: -2px;
+    }
+    .swiper-button-prev, .swiper-button-next{
+        bottom: -17px;
+    }
+    .stopbtn {
+        right: calc(50% - 195px / 2);
+        width: 30px;
+        height: 30px;
+    }
+    .stopbtn.stop:before, .stopbtn.stop:after{
+        top: 8px;
+    }
+    .stopbtn.start:before {
+        top: 9px;
+        right: 8px;
+    }
+  }
  </style>
 
  <div class="swiper-container slideshow--{{ section.settings.slide_height }}">
