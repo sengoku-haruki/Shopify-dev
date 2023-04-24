@@ -167,9 +167,9 @@
  <script type="text/javascript">  
   const swiper = new Swiper('.swiper-container', {
     // 自動再生（true:自動再生する、false:自動再生しない）
-     autoplay: {
-         delay: 9000,
-     },
+        autoplay: {
+            delay: {{ section.settings.speed }} * 1000,
+  },
     // スライド方向（水平方向）
     direction: 'horizontal',
     // エフェクト（true:フェードアニメーション、false:スライドアニメーション）
