@@ -336,6 +336,15 @@
             swiper.autoplay.start();
         }
     }
+      var sliderContainer = document.getElementById('sliderContainer');
+    var minAspectRatio = sliderContainer.getAttribute('data-min-aspect-ratio');
+    function sliderChangeHeight(){
+        sliderContainer.style.height = 
+        document.documentElement.offsetWidth / minAspectRatio + 'px';
+    }
+    window.onresize = function(){
+        sliderChangeHeight();
+    }
   });
  </script>
 {% schema %}
