@@ -312,6 +312,21 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
    }
+        let button = document.getElementById('playBtn');
+    button.addEventListener('click', butotnClick);
+
+    function butotnClick(){
+        var _class = this.getAttribute('class');
+        if (_class == 'stopbtn stop') {
+            this.classList.add("start");
+            this.classList.remove("stop");
+            swiper.autoplay.stop();
+        } else {
+            this.classList.add("stop");
+            this.classList.remove("start");
+            swiper.autoplay.start();
+        }
+    }
   });
  </script>
 {% schema %}
