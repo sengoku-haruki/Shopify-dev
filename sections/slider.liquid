@@ -228,7 +228,15 @@
     }
   }
  </style>
-
+{%- if section.settings.slide_height == 'adapt' -%}
+  {%- assign first_block = section.blocks[0] -%}
+  {%- if first_block.settings.image.aspect_ratio == blank -%}
+    {%- assign min_aspect_ratio = 2.0 -%}
+  {%- else -%}
+    {%- assign min_aspect_ratio = first_block.settings.image.aspect_ratio -%}
+  {%- endif -%}
+  {% assign wrapper_height = 100 | divided_by: min_aspect_ratio %}
+{%- endif -%} 
  <div class="swiper-container slideshow--{{ section.settings.slide_height }}">
    <div class="swiper-wrapper">
      {%- for block in section.blocks -%}
