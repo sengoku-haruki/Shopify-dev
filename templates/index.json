@@ -205,7 +205,7 @@
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
@@ -261,7 +261,6 @@
     },
     "73f90e81-32e1-4187-a5d0-746b5b8203e8": {
       "type": "slick-slider",
-      "disabled": true,
       "blocks": {
         "c2e8ec21-00ff-460b-b5d2-7b07257797ae": {
           "type": "block1",
@@ -279,13 +278,14 @@
         "6800efe7-b63c-4a2c-adb8-9f4c8e23f8ad": {
           "type": "block1",
           "settings": {
-            "block1-1": "block1の確認用テキスト"
+            "block1-1": "nnnnnnnnnnnnnnn"
           }
         },
         "bd31fd55-a332-4dda-a8b2-04193f49df15": {
           "type": "block2",
           "settings": {
-            "block2-text": ""
+            "block2-img": "shopify:\/\/shop_images\/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+            "block2-text": "bhbklknlnkn"
           }
         }
       },
