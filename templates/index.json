@@ -254,10 +254,16 @@
           "settings": {
             "block1-1": "bbbbbbbbbbbbb"
           }
+        },
+        "ed554d72-f638-447a-abeb-abaee8adbf79": {
+          "type": "block2",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "c2e8ec21-00ff-460b-b5d2-7b07257797ae"
+        "c2e8ec21-00ff-460b-b5d2-7b07257797ae",
+        "ed554d72-f638-447a-abeb-abaee8adbf79"
       ],
       "settings": {
         "test": "ooooooooooo"
