@@ -248,6 +248,17 @@
     },
     "73f90e81-32e1-4187-a5d0-746b5b8203e8": {
       "type": "slick-slider",
+      "blocks": {
+        "c2e8ec21-00ff-460b-b5d2-7b07257797ae": {
+          "type": "block1",
+          "settings": {
+            "block1-1": "bbbbbbbbbbbbb"
+          }
+        }
+      },
+      "block_order": [
+        "c2e8ec21-00ff-460b-b5d2-7b07257797ae"
+      ],
       "settings": {
         "test": "ooooooooooo"
       }
