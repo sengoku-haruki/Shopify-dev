@@ -217,15 +217,27 @@
         "0a5963b2-629f-423a-9829-96d342a46e23": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/green-and-white-marbled-coloring.jpg",
             "slide_title": "見出しが入ります。",
             "subheading": "あなたのブランドのストーリーをビデオや画像で伝える",
-            "button_label": "Button label",
+            "button_label": "k",
             "button_link": ""
           }
         },
         "f83af214-740f-40c7-bbce-ddddf82a9ffd": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/orange-poles-create-a-tunnel.jpg",
+            "slide_title": "見出しが入ります。",
+            "subheading": "あなたのブランドのストーリーをビデオや画像で伝える",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "e39d9188-7b37-492d-a28d-6e049c0dffc0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/road-lined-with-misty-fog-and-green-trees.jpg",
             "slide_title": "見出しが入ります。",
             "subheading": "あなたのブランドのストーリーをビデオや画像で伝える",
             "button_label": "Button label",
@@ -235,19 +247,21 @@
       },
       "block_order": [
         "0a5963b2-629f-423a-9829-96d342a46e23",
-        "f83af214-740f-40c7-bbce-ddddf82a9ffd"
+        "f83af214-740f-40c7-bbce-ddddf82a9ffd",
+        "e39d9188-7b37-492d-a28d-6e049c0dffc0"
       ],
       "settings": {
         "slide_height": "adapt",
         "text_size": "medium",
         "text_alignment": "center center",
-        "show_overlay": true,
-        "auto": false,
+        "show_overlay": false,
+        "auto": true,
         "speed": 3
       }
     },
     "73f90e81-32e1-4187-a5d0-746b5b8203e8": {
       "type": "slick-slider",
+      "disabled": true,
       "blocks": {
         "c2e8ec21-00ff-460b-b5d2-7b07257797ae": {
           "type": "block1",
