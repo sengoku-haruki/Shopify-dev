@@ -245,6 +245,12 @@
         "auto": false,
         "speed": 3
       }
+    },
+    "73f90e81-32e1-4187-a5d0-746b5b8203e8": {
+      "type": "slick-slider",
+      "settings": {
+        "test": "default text"
+      }
     }
   },
   "order": [
@@ -254,6 +260,7 @@
     "collage",
     "video",
     "multicolumn",
-    "4e0f4267-4c61-4a4e-a3a4-8ddcadd6b664"
+    "4e0f4267-4c61-4a4e-a3a4-8ddcadd6b664",
+    "73f90e81-32e1-4187-a5d0-746b5b8203e8"
   ]
 }
