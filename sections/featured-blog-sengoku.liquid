@@ -68,10 +68,10 @@
 {%- endstyle -%}  
 
 {% paginate blogs.news.articles by section.settings.post_limit %}
- <div class="container">
+ <ul class="container">
   <div class="row"> 
     {% for article in blogs.news.articles %}
-      <div class="col-sm-3">
+      <li class="col-sm-3">
         <div class="box">
           <h2>{{ article.title }}</h2>
           <p>{{ article.content }}</p>
@@ -83,10 +83,10 @@
             <p>{{ article.author }}</p>
           {% endif %}
         </div>
-      </div>
+      </li>
     {% endfor %}
   </div>
-</div>
+</ul>
   <div class="pagination">
     {% if paginate.previous %}
       <a href="{{ paginate.previous.url }}">previous</a>
