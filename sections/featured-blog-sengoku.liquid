@@ -38,77 +38,68 @@
     font-size: 16px;
     margin-bottom: 5px;
   }
-
+  .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  }
+  .pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #666;
+    text-decoration: none;
+  }
+  .pagination a:hover {
+    background-color: #666;
+    color: #fff;
+  }
+  .current-page {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #666;
+    color: #fff;
+  }
+  
 {%- endstyle -%}  
 
-{%- paginate blog.articles by section.settings.post_limit -%}
-  <div class="container">
-    <div class="row">
-      {%- for article in blog.articles -%}
-        <div class="col-sm-3">
-          <div class="box">
-            <h2>Box {{i}}</h2>
-            <p>Date: {{today | date: "%B %d, %Y" }}</p>
-            <p>Name: John Doe</p>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
+{% for article in blogs.news.articles %}
+  <div class="article">
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+    <a href="{{ article.url }}">Read more</a>
   </div>
-  {%- if paginate.pages > 1 -%}
-    <nav role="navigation">
-      <ol class="pagination">
-        {%- if paginate.previous-%}
-          <li>
-            <a href="{{ paginate.previous.url }}">
-              <span aria-hidden="true">&laquo;</span>
-              Previous <span class="visuallyhidden">page</span>
-            </a>
-          </li>
-        {%- else -%}
-          <li class="disabled">
-            <span aria-hidden="true">&laquo;</span>
-            Previous <span class="visuallyhidden">page</span>
-          </li>
-        {%- endif -%}
+{% endfor %}
 
-        {%- for part in paginate.parts -%}
-          {%- if part.is_link -%}
-            <li>
-              <a href="{{ part.url }}">
-                <span class="visuallyhidden">page</span> {{ part.title }}
-              </a>
-            </li>
-          {%- else -%}
-            {%- if part.title == paginate.current_page -%}
-              <li class="active" aria-current="page">
-                <span class="visuallyhidden">page</span> {{ part.title }}
-              </li>
-            {%- else -%}
-              <li>
-                <span class="visuallyhidden">page</span> {{ part.title }}
-              </li>
-            {%- endif -%}
-          {%- endif -%}
-        {%- endfor -%}
+{% paginate blogs.news.articles by 5 %}
+  {% for article in blogs.news.articles %}
+    <div class="article">
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.content }}</p>
+      <a href="{{ article.url }}">Read more</a>
+    </div>
+  {% endfor %}
+  <div class="pagination">
+    {% if paginate.previous %}
+      <a href="{{ paginate.previous.url }}">previous</a>
+    {% endif %}
+    {% for page in paginate.pages %}
+      {% if page.is_link %}
+        <a href="{{ page.url }}">{{ page.title }}</a>
+      {% elsif page.title %}
+        <span class="current-page">{{ page.title }}</span>
+      {% endif %}
+    {% endfor %}
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}">next</a>
+    {% endif %}
+  </div>
+{% endpaginate %}
 
-        {%- if paginate.next -%}
-          <li>
-            <a href="{{ paginate.next.url }}">
-              Next <span class="visuallyhidden">page</span>
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        {%- else -%}
-          <li class="disabled">
-            Next <span class="visuallyhidden">page</span>
-            <span aria-hidden="true">&raquo;</span>
-          </li>
-        {%- endif -%}
-      </ol>
-    </nav>
-  {%- endif -%}
-{%- endpaginate -%}
 {% schema %}
 {
   "name": "ブログ記事スライダー",
