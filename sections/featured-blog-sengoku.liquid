@@ -14,13 +14,31 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  }
+  .box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .box p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
 {%- endstyle -%}  
 
 {%- paginate blog.articles by section.settings.post_limit -%}
