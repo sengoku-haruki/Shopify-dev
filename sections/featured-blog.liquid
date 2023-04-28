@@ -16,7 +16,7 @@
     }
   }
 {%- endstyle -%}
-
+{% comment %}
 {%- liquid
   assign posts_displayed = section.settings.blog.articles_count
   if section.settings.post_limit <= section.settings.blog.articles_count
@@ -24,6 +24,8 @@
     assign posts_displayed = section.settings.post_limit
   endif
 -%}
+{% endcomment %}
+{%- paginate blog.articles by section.settings.blog.articles_count -%}    
 <div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
   <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
     {%- unless section.settings.heading == blank -%}
@@ -53,12 +55,12 @@
     {%- endunless -%}
     {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
       <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      
         <ul
           id="Slider-{{ section.id }}"
           class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}"
           role="list"
         >
-
           {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
             <li
               id="Slide-{{ section.id }}-{{ forloop.index }}"
@@ -144,9 +146,12 @@
         </div>
       </div>
     {%- endif -%}
+  {%- if paginate.pages > 1 -%}
+  {%- render 'pagination', paginate: paginate -%}
+  {%- endif -%}
   </div>
 </div>
-
+{% endpaginate %}
 {% schema %}
 {
   "name": "t:sections.featured-blog.name",
