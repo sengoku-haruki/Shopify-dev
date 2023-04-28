@@ -8,6 +8,11 @@ Featured Blog Section
   "tag": "section",
   "settings" : [
     {
+      "type": "blog",
+      "id": "blog",
+      "label": "表示するブログ"
+    },
+    {
       "id": "posts_per_page",
       "type": "range",
       "default": 5,
@@ -40,6 +45,14 @@ Featured Blog Section
       "type": "checkbox",
       "default": true,
       "label": "Show author"
+    }
+  ],
+    "presets": [
+    {
+      "name": "Featured Blog",
+      "settings": {
+        "blog": "News"
+      }
     }
   ]
 }
