@@ -67,7 +67,7 @@
   
 {%- endstyle -%}  
 
-{% paginate blogs.news.articles by 4 %}
+{% paginate blogs.news.articles by section.settings.post_limit %}
   {% for article in blogs.news.articles %}
     <div class="article">
       <h2>{{ article.title }}</h2>
