@@ -73,10 +73,12 @@
     {% for article in blogs.news.articles %}
       <div class="col-sm-3">
         <div class="box">
-          <h2>{{ article.title }}/h2>
+          <h2>{{ article.title }}</h2>
           <p>{{ article.content }}</p>
           <a href="{{ article.url }}">Read more</a>
-          <p>{{ section.settings.show_author }}</p>
+          {% if section.settings.show_author == true %}
+            <p>{{ article.author }}</p>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
