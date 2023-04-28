@@ -1,12 +1,99 @@
+{% comment %}
+Featured Blog Section
+{% endcomment %}
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Blog Section",
+  "tag": "section",
+  "settings" : [
+    {
+      "id": "posts_per_page",
+      "type": "range",
+      "default": 5,
+      "label": "ブログ記事の表示数",
+      "min": 1,
+      "max": 20
+    },
+    {
+      "id": "heading_size",
+      "type": "select",
+      "default": "h2",
+      "label": "見出しのサイズ",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" },
+        { "value": "h5", "label": "H5" },
+        { "value": "h6", "label": "H6" }
+      ]
+    },
+    {
+      "id": "show_date",
+      "type": "checkbox",
+      "default": true,
+      "label": "Show date"
+    },
+    {
+      "id": "show_author",
+      "type": "checkbox",
+      "default": true,
+      "label": "Show author"
+    }
+  ]
+}
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
+{% assign blog = blogs[section.settings.blog_handle] %}
+{% assign articles_per_page = section.settings.posts_per_page %}
 
-{% javascript %}
-{% endjavascript %}
+{% paginate blog.articles by articles_per_page %}
+
+{% if blog.articles.size > 0 %}
+  <section class="featured-blog-section">
+    <div class="container">
+      <{{ section.settings.heading_size }} class="section-title">{{ section.settings.name }}</{{ section.settings.heading_size }}>
+      <div class="blog-articles">
+        {% for article in blog.articles %}
+          <div class="blog-article">
+            <h3 class="article-title">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h3>
+            {% if section.settings.show_date %}
+              <p class="article-date">{{ article.published_at | date: "%B %d, %Y" }}</p>
+            {% endif %}
+            {% if section.settings.show_author %}
+              {% assign author = article.author %}
+              {% if author %}
+                <p class="article-author">{{ author.name }}</p>
+              {% endif %}
+            {% endif %}
+            <div class="article-excerpt">{{ article.excerpt }}</div>
+          </div>
+        {% endfor %}
+      </div>
+      {% if paginate.pages > 1 %}
+        <div class="pagination">
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}">Previous</a>
+          {% endif %}
+          {% for page in paginate.pages %}
+            {% if page == paginate.current %}
+              <span class="current-page">{{ page }}</span>
+            {% elsif page == 1 %}
+              <a href="{{ blog.url }}">1</a>
+            {% else %}
+              <a href="{{ blog.url }}?page={{ page }}">{{ page }}</a>
+            {% endif %}
+          {% endfor %}
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}">Next</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% endpaginate %}
