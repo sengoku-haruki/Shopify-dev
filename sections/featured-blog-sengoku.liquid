@@ -42,10 +42,9 @@
 {%- endstyle -%}  
 
 {%- paginate blog.articles by section.settings.post_limit -%}
-  {%- for article in blog.articles -%}
-    <div class="container">
-      <div class="row">
-        {% for i in (1..4) %}
+  <div class="container">
+    <div class="row">
+      {%- for article in blog.articles -%}
         <div class="col-sm-3">
           <div class="box">
             <h2>Box {{i}}</h2>
@@ -53,11 +52,9 @@
             <p>Name: John Doe</p>
           </div>
         </div>
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
-  {%- endfor -%}
-
+  </div>
   {%- if paginate.pages > 1 -%}
     <nav role="navigation">
       <ol class="pagination">
