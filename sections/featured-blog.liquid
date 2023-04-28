@@ -15,8 +15,7 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-{%- endstyle -%}
-{%- paginate blog.articles by section.settings.blog.articles_count -%}    
+{%- endstyle -%}  
 {%- liquid
   assign posts_displayed = section.settings.blog.articles_count
   if section.settings.post_limit <= section.settings.blog.articles_count
@@ -149,7 +148,6 @@
   {%- endif -%}
   </div>
 </div>
-{% endpaginate %}
 {% schema %}
 {
   "name": "t:sections.featured-blog.name",
