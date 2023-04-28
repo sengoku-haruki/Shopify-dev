@@ -76,6 +76,9 @@
           <h2>{{ article.title }}</h2>
           <p>{{ article.content }}</p>
           <a href="{{ article.url }}">Read more</a>
+          {% if section.settings.show_date == true %}
+            <p>{{ article.date }}</p>
+          {% endif %}
           {% if section.settings.show_author == true %}
             <p>{{ article.author }}</p>
           {% endif %}
