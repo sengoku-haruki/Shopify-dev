@@ -67,13 +67,7 @@
   
 {%- endstyle -%}  
 
-{% for article in blogs.news.articles %}
-  <div class="article">
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.content }}</p>
-    <a href="{{ article.url }}">Read more</a>
-  </div>
-{% endfor %}
+
 
 {% paginate blogs.news.articles by 5 %}
   {% for article in blogs.news.articles %}
