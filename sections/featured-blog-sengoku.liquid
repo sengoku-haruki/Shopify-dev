@@ -1,16 +1,27 @@
-<style>
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-}
-</style>
+{%- style -%}
+  .visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}  
 
 {%- paginate blog.articles by 5 -%}
   {%- for article in blog.articles -%}
@@ -105,7 +116,7 @@
     {
       "type": "blog",
       "id": "blog",
-      "label": "t:sections.featured-blog.settings.blog.label"
+      "label": "ブログ"
     },
     {
       "type": "range",
@@ -114,70 +125,19 @@
       "max": 4,
       "step": 1,
       "default": 3,
-      "label": "t:sections.featured-blog.settings.post_limit.label"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.featured-blog.settings.columns_desktop.label"
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_image",
-      "default": true,
-      "label": "t:sections.featured-blog.settings.show_image.label",
-      "info": "t:sections.featured-blog.settings.show_image.info"
+      "label": "表示するブログ記事数"
     },
     {
       "type": "checkbox",
       "id": "show_date",
       "default": true,
-      "label": "t:sections.featured-blog.settings.show_date.label"
+      "label": "日付を表示する"
     },
     {
       "type": "checkbox",
       "id": "show_author",
       "default": false,
-      "label": "t:sections.featured-blog.settings.show_author.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_view_all",
-      "default": true,
-      "label": "t:sections.featured-blog.settings.show_view_all.label"
+      "label": "執筆者を表示する"
     },
     {
       "type": "header",
@@ -190,7 +150,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "上部の余白",
       "default": 36
     },
     {
@@ -200,7 +160,7 @@
       "max": 400,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "下部の余白",
       "default": 36
     }
   ],
