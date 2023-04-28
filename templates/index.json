@@ -324,7 +324,7 @@
         "blog": "news",
         "post_limit": 4,
         "show_date": true,
-        "show_author": false,
+        "show_author": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
