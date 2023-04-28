@@ -58,6 +58,7 @@
           class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}"
           role="list"
         >
+      
           {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
             <li
               id="Slide-{{ section.id }}-{{ forloop.index }}"
@@ -77,6 +78,7 @@
               %}
             </li>
           {%- endfor -%}
+      
         </ul>
         {%- if posts_exceed_limit -%}
           <div class="slider-buttons no-js-hidden{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
