@@ -68,13 +68,19 @@
 {%- endstyle -%}  
 
 {% paginate blogs.news.articles by section.settings.post_limit %}
-  {% for article in blogs.news.articles %}
-    <div class="article">
-      <h2>{{ article.title }}</h2>
-      <p>{{ article.content }}</p>
-      <a href="{{ article.url }}">Read more</a>
-    </div>
-  {% endfor %}
+ <div class="container">
+  <div class="row"> 
+    {% for article in blogs.news.articles %}
+      <div class="col-sm-3">
+        <div class="box">
+          <h2>Box {{i}}</h2>
+          <p>Date: {{today | date: "%B %d, %Y" }}</p>
+          <p>Name: John Doe</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
   <div class="pagination">
     {% if paginate.previous %}
       <a href="{{ paginate.previous.url }}">previous</a>
