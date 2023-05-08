@@ -2,17 +2,6 @@
   .wrapper{
     bgcolor: black;
   }
-  .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap;
-  }
   .container {
     display: flex;
     list-style: none;
@@ -64,7 +53,7 @@
 {%- endstyle -%}  
 
 {% paginate blogs.news.articles by section.settings.post_limit %}
-<div class="visuallyhidden">
+<div class="wrapper">
 <h2 color="white"
   id="SectionHeading-{{ section.id }}"
   class="blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
