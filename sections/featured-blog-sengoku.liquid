@@ -98,7 +98,7 @@
         <div class="box">
           {% if section.settings.show_image == true %}
             <div class="blog-image">
-            {{ article.image | img_url: '1024x1024' | img_tag: article.title | escape }}
+            {{ article.image | img_url: '1x1' | img_tag: article.title | escape }}
             </div>
           {% endif %}
             {% if section.settings.show_image == false %}
