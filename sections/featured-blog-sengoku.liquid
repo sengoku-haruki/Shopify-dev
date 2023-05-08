@@ -92,7 +92,7 @@
       <li>
         <div class="box">
           {% if section.settings.show_image == true %}
-            {{  article.image }}
+            {{   article.image | img_url: '1024x1024' | img_tag: article.title | escape  }}
           {% endif %}
             {% if section.settings.show_image == false %}
               <h2>{{ article.title }}</h2>
