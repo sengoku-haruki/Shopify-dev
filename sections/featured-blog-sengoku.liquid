@@ -87,10 +87,8 @@
         </h2>
       </div>
     {%- endunless -%}
-
-
+ <ul>
   <div class="container"> 
-   <ul>
     {% for article in blogs.news.articles %}
       <li>
         <div class="box">
@@ -106,8 +104,8 @@
         </div>
       </li>
     {% endfor %}
-    </ul>
   </div>
+</ul>
   <div class="pagination">
     {% if paginate.previous %}
       <a href="{{ paginate.previous.url }}">next</a>
