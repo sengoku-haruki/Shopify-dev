@@ -91,6 +91,8 @@
     {% for article in blogs.news.articles %}
       <li>
         <div class="box">
+          {% if section.settings.show_image == true %}
+          {% endif %}
           <h2>{{ article.title }}</h2>
           <p>{{ article.content }}</p>
           <a href="{{ article.url }}">Read more</a>
