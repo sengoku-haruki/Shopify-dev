@@ -10,9 +10,6 @@
     padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-  .wrapper{
-    bgcolor: black;
-  }
   .container {
     display: flex;
     list-style: none;
@@ -27,6 +24,9 @@
     width: calc(100% / {{ section.settings.post_limit }});
     background-color: white;
     color: black;
+  }
+  .container li div{
+    padding: 0px;
   }
   .container h2{
     color: black;
