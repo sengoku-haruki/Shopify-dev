@@ -61,6 +61,7 @@
 {%- endstyle -%}  
 
 {% paginate blogs.news.articles by section.settings.post_limit %}
+<div>
 <h2
   id="SectionHeading-{{ section.id }}"
   class="blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -104,6 +105,7 @@
       <a href="{{ paginate.next.url }}">next</a>
     {% endif %}
   </div>
+</div>
 {% endpaginate %}
 
 {% schema %}
