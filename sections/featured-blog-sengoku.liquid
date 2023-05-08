@@ -101,7 +101,6 @@
             {{ article.image | img_url: '100x100' | img_tag: article.title | escape }}
             </div>
           {% endif %}
-            {% if section.settings.show_image == false %}
               <h2>{{ article.title }}</h2>
               <p>{{ article.content }}</p>
               <a href="{{ article.url }}">Read more</a>
@@ -111,7 +110,6 @@
               {% if section.settings.show_author == true %}
                 <p>{{ article.author }}</p>
               {% endif %}
-            {% endif %}
         </div>
       </li>
     {% endfor %}
