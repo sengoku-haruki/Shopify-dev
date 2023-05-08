@@ -79,8 +79,7 @@
         </h2>
       </div>
     {%- endunless -%}
-  </div>
-</div>
+
  <ul class="container">
   <div > 
     {% for article in blogs.news.articles %}
@@ -116,7 +115,8 @@
     {% endif %}
   </div>
 {% endpaginate %}
-
+  </div>
+</div>
 {% schema %}
 {
   "name": "ブログ記事スライダー",
