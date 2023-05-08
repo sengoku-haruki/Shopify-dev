@@ -77,6 +77,10 @@
         >
           {{ section.settings.heading }}
         </h2>
+      </div>
+    {%- endunless -%}
+  </div>
+</div>
  <ul class="container">
   <div > 
     {% for article in blogs.news.articles %}
@@ -111,10 +115,6 @@
       <a href="{{ paginate.next.url }}">next</a>
     {% endif %}
   </div>
-  </div>
-  {%- endunless -%}
-</div>
-</div>
 {% endpaginate %}
 
 {% schema %}
