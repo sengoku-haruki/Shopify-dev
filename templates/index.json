@@ -7,7 +7,7 @@
         "heading_size": "h1",
         "blog": "news",
         "post_limit": 4,
-        "color_scheme": "accent-2",
+        "color_scheme": "inverse",
         "show_date": true,
         "show_author": true,
         "padding_top": 36,
