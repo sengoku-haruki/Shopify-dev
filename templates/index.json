@@ -1,5 +1,18 @@
 {
   "sections": {
+    "a5c7e4e8-fbdd-4f1c-b37c-e48360dd8a68": {
+      "type": "featured-blog-sengoku",
+      "settings": {
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 4,
+        "show_date": true,
+        "show_author": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -315,22 +328,10 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "a5c7e4e8-fbdd-4f1c-b37c-e48360dd8a68": {
-      "type": "featured-blog-sengoku",
-      "settings": {
-        "heading": "Blog posts",
-        "heading_size": "h1",
-        "blog": "news",
-        "post_limit": 4,
-        "show_date": true,
-        "show_author": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
+    "a5c7e4e8-fbdd-4f1c-b37c-e48360dd8a68",
     "image_banner",
     "rich_text",
     "featured_collection",
@@ -339,7 +340,6 @@
     "multicolumn",
     "4e0f4267-4c61-4a4e-a3a4-8ddcadd6b664",
     "73f90e81-32e1-4187-a5d0-746b5b8203e8",
-    "ea39dc6b-a319-4774-987d-540a4017e57c",
-    "a5c7e4e8-fbdd-4f1c-b37c-e48360dd8a68"
+    "ea39dc6b-a319-4774-987d-540a4017e57c"
   ]
 }
