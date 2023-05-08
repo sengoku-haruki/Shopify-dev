@@ -11,12 +11,12 @@
     }
   }
   .container {
-    display: flex;
-    list-style: none;
-  }
-  .container ul div{
     margin: 0px;
     padding: 0px;
+  }
+  .container div{
+    display: flex;
+    list-style: none;
   }
   .container li {
     margin-left: auto;
@@ -90,8 +90,8 @@
         </h2>
       </div>
     {%- endunless -%}
- <ul>
-  <div class="container"> 
+ <ul class="container">
+  <div> 
     {% for article in blogs.news.articles %}
       <li>
         <div class="box">
