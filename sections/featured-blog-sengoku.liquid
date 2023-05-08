@@ -87,7 +87,7 @@
         </h2>
       </div>
     {%- endunless -%}
- <ul class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
+ <ul class="blog color-{{ section.settings.color_scheme }}"">
   <div class="container"> 
     {% for article in blogs.news.articles %}
       <li>
