@@ -87,8 +87,8 @@
         </h2>
       </div>
     {%- endunless -%}
- <ul class="blog color-{{ section.settings.color_scheme }}">
-  <div class="container"> 
+ <ul>
+  <div class="container" class="blog color-{{ section.settings.color_scheme }}"> 
     {% for article in blogs.news.articles %}
       <li>
         <div class="box">
