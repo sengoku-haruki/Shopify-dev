@@ -88,6 +88,16 @@
     left: 0;
   }
 {%- endstyle -%}
+<script src="{{ 'slick.min.js' | asset_url }}"></script>
+<script>
+  $(document).ready(function(){
+    $('.slider').slick({
+      infinite: true,
+      slidesToShow: {{ section.settings.post_limit }},
+      slidesToScroll: 1
+    });
+  });
+</script>
 <div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
 {% paginate blogs.news.articles by section.settings.post_limit %}
   <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
