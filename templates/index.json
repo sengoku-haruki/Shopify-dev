@@ -44,7 +44,7 @@
         "heading": "Blog posts",
         "heading_size": "h0",
         "blog": "news",
-        "post_limit": 4,
+        "post_limit": 40,
         "columns_desktop": 4,
         "color_scheme": "accent-1",
         "show_image": true,
