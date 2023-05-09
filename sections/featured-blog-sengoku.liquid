@@ -114,6 +114,7 @@
         </h2>
       </div>
     {%- endunless -%}
+
  <ul class="slider">
   <div class="container color-{{ section.settings.color_scheme }}"> 
     {% for article in blogs.news.articles %}
@@ -125,25 +126,25 @@
                 {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
               </a>
             </div>
-                  {% endif %}
-                    <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
-                    {% if section.settings.show_date == true %}
-                      <time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
-                    {% endif %}
-                    {% if section.settings.show_date == true and section.settings.show_author == true %}
-                      .
-                    {% endif %}
-                    {% if section.settings.show_author == true %}
-                      {{ article.author }}
-                    {% endif %}
-                    <p>{{ article.content }}</p>
-                  </div>
-                </li>
-              {% endfor %}
-            </div>
-          </ul>
-
+          {% endif %}
+          <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
+          {% if section.settings.show_date == true %}
+            <time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
+          {% endif %}
+          {% if section.settings.show_date == true and section.settings.show_author == true %}
+            .
+          {% endif %}
+          {% if section.settings.show_author == true %}
+            {{ article.author }}
+          {% endif %}
+          <p>{{ article.content }}</p>
+        </div>
+      </li>
+    {% endfor %}
   </div>
+</ul>
+
+</div>
 </div>
 {% schema %}
 {
