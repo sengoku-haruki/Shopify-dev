@@ -109,7 +109,7 @@
             </div>
                   {% endif %}
                     <h2>{{ article.title }}</h2>
-                    <p>{{ article.content }}</p>
+                    
                     <p><a href="{{ article.url }}">Read more</a></p>
                     {% if section.settings.show_date == true %}
                       <time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
