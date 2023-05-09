@@ -84,6 +84,7 @@
 {%- endstyle -%}
 <head>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  {{ 'slick-slide.css' | asset_url | stylesheet_tag }}
 </head>
 <div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
 {% paginate blogs.news.articles by section.settings.post_limit %}
