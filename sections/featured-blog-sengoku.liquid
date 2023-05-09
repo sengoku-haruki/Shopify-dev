@@ -105,11 +105,11 @@
   <div class="container"> 
     {% for article in blogs.news.articles %}
       {% if section.settings.color_scheme == background-1 or section.settings.color_scheme == background-2 %}
-        {% assign bg_color = "white" %}
-        {% assign color = "black" %}
+        {% assign bg_color = "#FFF" %}
+        {% assign color = "#000" %}
       {% else %}
-        {% assign bg_color = "black" %}
-        {% assign color = "white" %}
+        {% assign bg_color = "#000" %}
+        {% assign color = "#FFF" %}
       {% endif %}
       <li style="--bg-color: {{ bg_color }};" style="--color: {{ color }};">
         <div class="box">
