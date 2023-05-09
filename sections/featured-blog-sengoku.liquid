@@ -105,7 +105,9 @@
         <div class="box">
           {% if section.settings.show_image == true %}
             <div class="blog-image">
-            {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
+              <a href="{{ article.url }}">
+                {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
+              </a>
             </div>
                   {% endif %}
                     <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
