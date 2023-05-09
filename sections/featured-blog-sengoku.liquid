@@ -87,7 +87,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   {{ 'slick-slide.css' | asset_url | stylesheet_tag }}
-  {{ '○○○○.js' | asset_url | script_tag }}
+  {{ 'slick-slide.js' | asset_url | script_tag }}
 </head>
 <div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
 {% paginate blogs.news.articles by section.settings.post_limit %}
