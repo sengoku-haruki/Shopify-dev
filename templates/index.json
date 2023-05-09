@@ -15,305 +15,6 @@
         "padding_bottom": 32
       }
     },
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "4e0f4267-4c61-4a4e-a3a4-8ddcadd6b664": {
-      "type": "slider",
-      "blocks": {
-        "0a5963b2-629f-423a-9829-96d342a46e23": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/green-and-white-marbled-coloring.jpg",
-            "slide_title": "見出しが入ります。",
-            "subheading": "あなたのブランドのストーリーをビデオや画像で伝える",
-            "button_label": "k",
-            "button_link": ""
-          }
-        },
-        "f83af214-740f-40c7-bbce-ddddf82a9ffd": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/orange-poles-create-a-tunnel.jpg",
-            "slide_title": "見出しが入ります。",
-            "subheading": "あなたのブランドのストーリーをビデオや画像で伝える",
-            "button_label": "Button label",
-            "button_link": ""
-          }
-        },
-        "e39d9188-7b37-492d-a28d-6e049c0dffc0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/road-lined-with-misty-fog-and-green-trees.jpg",
-            "slide_title": "見出しが入ります。",
-            "subheading": "あなたのブランドのストーリーをビデオや画像で伝える",
-            "button_label": "Button label",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "0a5963b2-629f-423a-9829-96d342a46e23",
-        "f83af214-740f-40c7-bbce-ddddf82a9ffd",
-        "e39d9188-7b37-492d-a28d-6e049c0dffc0"
-      ],
-      "settings": {
-        "slide_height": "adapt",
-        "text_size": "medium",
-        "text_alignment": "center center",
-        "show_overlay": false,
-        "auto": false,
-        "speed": 3
-      }
-    },
-    "73f90e81-32e1-4187-a5d0-746b5b8203e8": {
-      "type": "slick-slider",
-      "blocks": {
-        "c2e8ec21-00ff-460b-b5d2-7b07257797ae": {
-          "type": "block1",
-          "settings": {
-            "block1-1": "bbbbbbbbbbbbb"
-          }
-        },
-        "ed554d72-f638-447a-abeb-abaee8adbf79": {
-          "type": "block2",
-          "settings": {
-            "block2-img": "shopify:\/\/shop_images\/a-bridge-sitting-in-thick-pink-and-purple-fog.jpg",
-            "block2-text": "dhhdhdh"
-          }
-        },
-        "6800efe7-b63c-4a2c-adb8-9f4c8e23f8ad": {
-          "type": "block1",
-          "settings": {
-            "block1-1": "nnnnnnnnnnnnnnn"
-          }
-        },
-        "bd31fd55-a332-4dda-a8b2-04193f49df15": {
-          "type": "block2",
-          "settings": {
-            "block2-img": "shopify:\/\/shop_images\/silhouetted-couples-look-out-at-a-city-at-night.jpg",
-            "block2-text": "bhbklknlnkn"
-          }
-        }
-      },
-      "block_order": [
-        "c2e8ec21-00ff-460b-b5d2-7b07257797ae",
-        "ed554d72-f638-447a-abeb-abaee8adbf79",
-        "6800efe7-b63c-4a2c-adb8-9f4c8e23f8ad",
-        "bd31fd55-a332-4dda-a8b2-04193f49df15"
-      ],
-      "settings": {
-        "test": "ooooooooooo"
-      }
-    },
     "ea39dc6b-a319-4774-987d-540a4017e57c": {
       "type": "featured-blog",
       "settings": {
@@ -330,18 +31,34 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "7b689825-d7b9-48af-b6e0-31c57b24f42a": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18699801362709__7b689825-d7b9-48af-b6e0-31c57b24f42a-16836153376e4e1f76-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--18699801362709__7b689825-d7b9-48af-b6e0-31c57b24f42a-16836153376e4e1f76-0"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "a5c7e4e8-fbdd-4f1c-b37c-e48360dd8a68",
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn",
-    "4e0f4267-4c61-4a4e-a3a4-8ddcadd6b664",
-    "73f90e81-32e1-4187-a5d0-746b5b8203e8",
-    "ea39dc6b-a319-4774-987d-540a4017e57c"
+    "ea39dc6b-a319-4774-987d-540a4017e57c",
+    "7b689825-d7b9-48af-b6e0-31c57b24f42a"
   ]
 }
