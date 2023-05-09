@@ -92,6 +92,9 @@
 <script>
   $(document).ready(function(){
     $('.slider').slick({
+      autoplay: true,
+      dots: true,
+      arrows: true,
       infinite: true,
       slidesToShow: {{ section.settings.post_limit }},
       slidesToScroll: 1
