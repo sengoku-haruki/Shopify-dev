@@ -105,12 +105,10 @@
         <div class="box">
           {% if section.settings.show_image == true %}
             <div class="blog-image">
-              <a href="{{ article.url }}">
-                {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
-              </a>
+            {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
             </div>
                   {% endif %}
-                    <h2>{{ article.title }}</h2> 
+                    <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
                     {% if section.settings.show_date == true %}
                       <time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
                     {% endif %}
@@ -120,7 +118,7 @@
                     {% if section.settings.show_author == true %}
                       {{ article.author }}
                     {% endif %}
-                    <p><a href="{{ article.url }}">Read more</a></p>
+                    <p>{{ article.content }}</p>
                   </div>
                 </li>
               {% endfor %}
