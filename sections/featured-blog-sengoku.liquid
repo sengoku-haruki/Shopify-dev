@@ -112,6 +112,9 @@
               {% if section.settings.show_date == true %}
                 <p><time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
               {% endif %}
+              {% if section.settings.show_date == true and section.settings.show_author == true %}
+                .
+              {% endif %}
               {% if section.settings.show_author == true %}
                 {{ article.author }}</p>
               {% endif %}
