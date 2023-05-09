@@ -112,7 +112,7 @@
         <div class="box">
           {% if section.settings.show_image == true %}
             <div class="blog-image">
-            {{ article.image | img_url: '1024x1024' | img_tag: article.title | escape }}
+            {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
             </div>
                   {% endif %}
                     <h2>{{ article.title }}</h2>
