@@ -117,10 +117,10 @@
       </div>
     {%- endunless -%}
 
- <ul>
+ <ul class="slider">
   <div class="container color-{{ section.settings.color_scheme }}"> 
     {% for article in blogs.news.articles %}
-      <li class="slider">
+      <li>
         <div class="box">
           {% if section.settings.show_image == true %}
             <div class="blog-image">
