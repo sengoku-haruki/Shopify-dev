@@ -110,13 +110,13 @@
               <p>{{ article.content }}</p>
               <a href="{{ article.url }}">Read more</a>
               {% if section.settings.show_date == true %}
-                <p><time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
+                <time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
               {% endif %}
               {% if section.settings.show_date == true and section.settings.show_author == true %}
                 .
               {% endif %}
               {% if section.settings.show_author == true %}
-                {{ article.author }}</p>
+                {{ article.author }}
               {% endif %}
         </div>
       </li>
