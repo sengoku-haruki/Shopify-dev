@@ -108,9 +108,7 @@
             {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
             </div>
                   {% endif %}
-                    <h2>{{ article.title }}</h2>
-                    
-                    <p><a href="{{ article.url }}">Read more</a></p>
+                    <h2>{{ article.title }}</h2> 
                     {% if section.settings.show_date == true %}
                       <time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
                     {% endif %}
@@ -120,6 +118,7 @@
                     {% if section.settings.show_author == true %}
                       {{ article.author }}
                     {% endif %}
+                    <p><a href="{{ article.url }}">Read more</a></p>
                   </div>
                 </li>
               {% endfor %}
