@@ -104,7 +104,14 @@
  <ul>
   <div class="container"> 
     {% for article in blogs.news.articles %}
-      <li>
+      {% if section.settings.color_scheme == background-1 or section.settings.color_scheme == background-2 %}
+        {% assign bg_color = "white" %}
+        {% assign color = "black" %}
+      {% else %}
+        {% assign bg_color = "black" %}
+        {% assign color = "white" %}
+      {% endif %}
+      <li style="--bg-color: {{ bg_color }};" style="--color: {{ color }};">
         <div class="box">
           {% if section.settings.show_image == true %}
             <div class="blog-image">
