@@ -132,13 +132,10 @@
           {% endif %}
           <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
           {% if section.settings.show_date == true %}
-            <time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time>
-          {% endif %}
-          {% if section.settings.show_date == true and section.settings.show_author == true %}
-            .
+            <p><time datetime="{{ article.updated_at }}">{{ article.updated_at | date: "%Y/%m/%d" }}</time></p>
           {% endif %}
           {% if section.settings.show_author == true %}
-            {{ article.author }}
+            <p>{{ article.author }}</p>
           {% endif %}
           <p>{{ article.content }}</p>
         </div>
