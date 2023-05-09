@@ -142,22 +142,7 @@
               {% endfor %}
             </div>
           </ul>
-            <div class="pagination">
-              {% if paginate.previous %}
-                <a href="{{ paginate.previous.url }}">◁</a>
-              {% endif %}
-              {% for page in paginate.pages %}
-                {% if page.is_link %}
-                  <a href="{{ page.url }}">{{ page.title }}</a>
-                {% elsif page.title %}
-                  <span class="current-page">{{ page.title }}</span>
-                {% endif %}
-              {% endfor %}
-            {% if paginate.next %}
-          <a href="{{ paginate.next.url }}">▷</a>
-        {% endif %}
-      
-    </div>
+
   </div>
 </div>
 {% schema %}
