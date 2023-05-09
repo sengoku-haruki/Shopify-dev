@@ -134,7 +134,7 @@
           </ul>
             <div class="pagination">
               {% if paginate.previous %}
-                <a href="{{ paginate.previous.url }}">next</a>
+                <a href="{{ paginate.previous.url }}">▷</a>
               {% endif %}
               {% for page in paginate.pages %}
                 {% if page.is_link %}
@@ -144,7 +144,7 @@
                 {% endif %}
               {% endfor %}
             {% if paginate.next %}
-          <a href="{{ paginate.next.url }}">next</a>
+          <a href="{{ paginate.next.url }}">◁</a>
         {% endif %}
       {% endpaginate %}
     </div>
