@@ -89,27 +89,16 @@
 {%- endstyle -%}
 <script src="{{ 'slick.min.js' | asset_url }}"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  new Splide('#slider', {
-    autoplay: true,
-    perPage: {{ section.settings.post_limit }},
-    pagination: true,
-    arrows: true,
-    gap: 10,
-    breakpoints: {
-      640: {
-        perPage: 1
-      },
-      768: {
-        perPage: 2
-      },
-      1024: {
-        perPage: {{ section.settings.post_limit }}
-      }
-    }
-  }).mount();
-});
-
+  $(document).ready(function(){
+    $('#slider').slick({
+      autoplay: true,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      slidesToShow: {{ section.settings.post_limit }},
+      slidesToScroll: 1
+    });
+  });
 </script>
 <div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
 
@@ -130,9 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </h2>
       </div>
     {%- endunless -%}
-<div class="blog color-{{ section.settings.color_scheme }} gradient">
- <ul id="slider" class="slider" >
-
+<div class="container color-{{ section.settings.color_scheme }} gradient">
+ <ul class="slider" id="slider">
     {% for article in blogs.news.articles %}
       <li>
         <div class="box">
@@ -154,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </li>
     {% endfor %}
-
 </ul>
 </div>
 </div>
