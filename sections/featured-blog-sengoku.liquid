@@ -120,8 +120,8 @@
       </div>
     {%- endunless -%}
 <div class="blog color-{{ section.settings.color_scheme }} gradient">
- <ul class="blog-slider" id="slider">
-  <div class="container color-{{ section.settings.color_scheme }}"> 
+ <ul id="slider" class="slider" >
+
     {% for article in blogs.news.articles %}
       <li>
         <div class="box">
@@ -143,7 +143,7 @@
         </div>
       </li>
     {% endfor %}
-  </div>
+
 </ul>
 </div>
 </div>
