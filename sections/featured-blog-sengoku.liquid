@@ -89,16 +89,27 @@
 {%- endstyle -%}
 <script src="{{ 'slick.min.js' | asset_url }}"></script>
 <script>
-  $(document).ready(function(){
-    $('#slider').slick({
-      autoplay: true,
-      dots: true,
-      arrows: true,
-      infinite: true,
-      slidesToShow: {{ section.settings.post_limit }},
-      slidesToScroll: 1
-    });
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  new Splide('#slider', {
+    autoplay: true,
+    perPage: {{ section.settings.post_limit }},
+    pagination: true,
+    arrows: true,
+    gap: 10,
+    breakpoints: {
+      640: {
+        perPage: 1
+      },
+      768: {
+        perPage: 2
+      },
+      1024: {
+        perPage: {{ section.settings.post_limit }}
+      }
+    }
+  }).mount();
+});
+
 </script>
 <div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
 
