@@ -1,133 +1,15 @@
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-@media screen and (min-width: 750px) {
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-  ul{
-    list-style: none;
-    padding: 0;
-  }
-  .container {
-    display: flex;
-    list-style: none;
-  }
-  .container li {
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-    width: calc(100% / {{ section.settings.post_limit }});
-  }
-  .container h2{
-  }
-  .container a{
-    text-decoration: none;
-  }
-  .container a img:hover {
-    transform: scale(1.05);
-  }
-  .box {
-    flex: 1;
-    padding: 0;
-    margin: 0  
-  }
-  .box h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  .box p {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  .pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  }
-  .pagination a {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-right: 5px;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    color: #666;
-    text-decoration: none;
-  }
-  .pagination a:hover {
-    background-color: #666;
-    color: #fff;
-  }
-  .current-page {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-right: 5px;
-    border-radius: 5px;
-    background-color: #666;
-    color: #fff;
-  }
-  .blog-image{
-    flex: 1;
-    width: 100%;
-    height: 150px;
-    position: relative;
-  }
-  .blog-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-{%- endstyle -%}
+<!-- slick.min.jsの読み込み -->
 <script src="{{ 'slick.min.js' | asset_url }}"></script>
-<script>
-  $(document).ready(function(){
-    $('#slider').slick({
-      autoplay: true,
-      dots: true,
-      arrows: true,
-      infinite: true,
-      slidesToShow: {{ section.settings.post_limit }},
-      slidesToScroll: 1
-    });
-  });
-</script>
-<div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
 
-  <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
-    {%- unless section.settings.heading == blank -%}
-      <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
-        <h2 color="white"
-          id="SectionHeading-{{ section.id }}"
-          class="blog__title inline-richtext {{ section.settings.heading_size }}
-          {% if settings.animations_reveal_on_scroll %}
-            scroll-trigger animate--slide-in
-          {% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-          {% endif %}
-        >
-          {{ section.settings.heading }}
-        </h2>
-      </div>
-    {%- endunless -%}
- <ul class="slider" id="slider">
-  <div class="container color-{{ section.settings.color_scheme }}"> 
-    {% for article in blogs.news.articles limit: section.settings.post_limit %}
+<div class="blog color-{{ section.settings.color_scheme }} gradient">
+  <ul id="slider" class="slider">
+    {% for article in blogs.news.articles %}
       <li>
-        <div class="box">
+        <div class="container color-{{ section.settings.color_scheme }}">
           {% if section.settings.show_image == true %}
             <div class="blog-image">
               <a href="{{ article.url }}">
-                {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
+                <img src="{{ article.image | img_url: '2048x2048' | escape }}" alt="{{ article.title }}">
               </a>
             </div>
           {% endif %}
@@ -142,130 +24,65 @@
         </div>
       </li>
     {% endfor %}
-  </div>
-</ul>
+  </ul>
 </div>
-</div>
-{% schema %}
-{
-  "name": "ブログ記事スライダー",
-  "tag": "section",
-  "settings":[
-    {
-     "type": "inline_richtext",
-      "id": "heading",
-      "default": "Blog posts",
-      "label": "見出し"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "小"
-        },
-        {
-          "value": "h1",
-          "label": "中"
-        },
-        {
-          "value": "h0",
-          "label": "大"
-        }
-      ],
-      "default": "h1",
-      "label": "見出しのサイズ"
-    },
-    {
-      "type": "blog",
-      "id": "blog",
-      "label": "ブログ"
-    },
-    {
-      "type": "range",
-      "id": "post_limit",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 3,
-      "label": "表示するブログ記事数"
-    },
-        {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_image",
-      "default": true,
-      "label": "記事のサムネイルを表示する"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_date",
-      "default": true,
-      "label": "日付を表示する"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_author",
-      "default": false,
-      "label": "執筆者を表示する"
-    },
-        {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "上部の余白",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "下部の余白",
-      "default": 36
-    }
-  ],
-  "presets": [
-    {
-      "name": "ブログ記事スライダー",
-      "settings": {
-        "blog": "News"
-      }
-    }
-  ]
+
+<style>
+/* スライダーのスタイル */
+#slider {
+  list-style: none;
+  padding: 0;
 }
-{% endschema %}
+
+#slider li {
+  width: 100%;
+}
+
+/* 以下は既存のスタイルの一部（必要に応じて適宜修正してください） */
+.container {
+  display: flex;
+}
+
+.container li {
+  width: calc(100% / {{ section.settings.post_limit }});
+}
+
+.container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.blog-image {
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+</style>
+
+<script>
+// DOMの読み込み完了後にスライダーを初期化
+document.addEventListener('DOMContentLoaded', function() {
+  $('#slider').slick({
+    autoplay: true,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    slidesToShow: {{ section.settings.post_limit }},
+    slidesToScroll: 1
+  });
+});
+</script>
