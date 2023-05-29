@@ -119,8 +119,8 @@
         </h2>
       </div>
     {%- endunless -%}
-
- <ul class="slider" id="slider">
+<div class="blog color-{{ section.settings.color_scheme }} gradient">
+ <ul class="blog-slider" id="slider">
   <div class="container color-{{ section.settings.color_scheme }}"> 
     {% for article in blogs.news.articles %}
       <li>
@@ -145,7 +145,7 @@
     {% endfor %}
   </div>
 </ul>
-
+</div>
 </div>
 </div>
 {% schema %}
