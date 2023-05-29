@@ -6,7 +6,7 @@
         "heading": "Blog posts",
         "heading_size": "h0",
         "blog": "news",
-        "post_limit": 3,
+        "post_limit": 4,
         "color_scheme": "accent-1",
         "show_image": true,
         "show_date": true,
